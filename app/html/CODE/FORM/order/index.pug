@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+!= "<html>"
+//create by ANATOLY KUZNETSOV!
+//contact mail:kuznecovs45@gmail.com skype:an_kuznetcov
+head
+	meta(charset="UTF-8")
+	meta(name='viewport' content="width=device-width, initial-scale=1")
+	meta(name="format-detection" content="telephone=no")
+
+	//colors-tabs
+	meta(name="theme-color" content="#000")
+	meta(name="msapplication-navbutton-color" content="#000")
+	meta(name="apple-mobile-web-app-status-bar-style" content="#000")
+
+	//SEO
+	title Document
+	meta(name="description" itemprop="description" content="")
+
+	//build:css ./css/vendor.css
+	link(rel="stylesheet", href="/bower/normalize.css/normalize.css")
+	link(rel="icon", type="image/x-icon" href="img/favicon.ico")
+	//endbuild
+
+	link(rel="stylesheet", href="/css/style.css")
+	link(rel="stylesheet", href="/css/CODE/FORM/order/style.css")
+
+include /html/block_html/_const.pug
+include /html/block_html/_mixin.pug
+include /html/block_html/_include.pug
+!= "<body>"
+
+.page
+	.content
+		//content her
+		.main-cont
+			h2 Форма заявок
+			form.validate-form( action="javascript:void(null);")
+				.input-row
+					input(type="text" name="name" placeholder="Ваше имя").input
+				.input-row
+					input(type="text" name="phone" placeholder="Ваш телефон").input
+				.input-row
+					input(type="text" name="mail" placeholder="Ваша почта").input
+				.input-row
+					textarea(name="info", cols="30", rows="5" placeholder="Сообщение").input
+				.login-remember
+					.check-el
+						label.style-label.style-label--checkbox
+							input(type="checkbox" name="agree").style-input
+							.style-input-element
+								+icon("checked","icon-check")
+							.style-input-text Я ознакомился с #[a(href="#") политикой конфиденциальности], #[a(href="#") публичной офертой] и даю согласие на обработку моих персональных данных
+				input(type="submit" value="Отправить заявку").modal-send
+
+
+.modal-layer
+	.modal-filter
+	.modal-wrap
+		.modal.modal--true(data-modal="trueMsg")
+			.modal-content
+				.modal-close
+					+icon("close-fat","icon")
+				+icon("check-round","icon icon-msg")
+				.modal-text-true Сообщение отправленно
+				.modal-text-add Спасибо за ваше время, мы скоро свяжемся с вами
+
+script(src='/bower/jquery/dist/jquery.js')
+//ADD
+script(src="/js/script.js")
+script(src='/bower/jquery-validation/dist/jquery.validate.min.js')
+//ADD === end
+script(src="/js/add-on.js")
+script(src="/html/CODE/FORM/order/script.js")
+
+</body>
+</html>
